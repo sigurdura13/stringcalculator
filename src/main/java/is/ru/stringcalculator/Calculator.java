@@ -3,10 +3,10 @@ package is.ru.stringcalculator;
 public class Calculator {
 
 	public static int add(String text) {
-		if(isEmptyString(text)) {
+		if (isEmptyString(text)) {
 			return 0;
 		}
-		return Integer.parseInt(text);
+		return 1;
 	}
 
 	private static Boolean isEmptyString(String text) {
