@@ -1,6 +1,5 @@
 package is.ru.stringcalculator;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+
 
 
 public class Calculator {
@@ -11,6 +10,9 @@ public class Calculator {
 			return 0;
 		}
 		else if (text.contains(",") || text.contains("\n") || text.contains("//")) {
+			if (text.startsWith("//")) {
+				return sum(newDelimiter(text));
+			}
 			return sum(splitNumbers(text));
 		} else {
 			return 1;
@@ -26,12 +28,6 @@ public class Calculator {
 	}
 
 	private static String[] splitNumbers(String numbers) {
-		if (numbers.startsWith("//")) {
-			Character newDelimiter = numbers.charAt(2);
-			numbers = numbers.substring(4);
-			return numbers.split(",|\n|" + newDelimiter);
-		}
-
 	    return numbers.split(",|\n");
 	}
 
@@ -47,4 +43,9 @@ public class Calculator {
 		return text.contains(",") || text.contains("\n");
 	}
 
+	private static String[] newDelimiter(String numbers) {	 
+			Character newDelimiter = numbers.charAt(2);
+			numbers = numbers.substring(4);
+			return numbers.split(",|\n|" + newDelimiter);
+	}
 }

@@ -1,6 +1,5 @@
 package is.ru.stringcalculator;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
