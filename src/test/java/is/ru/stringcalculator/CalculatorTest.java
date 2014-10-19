@@ -1,4 +1,6 @@
 package is.ru.stringcalculator;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
@@ -25,12 +27,17 @@ public class CalculatorTest {
 	}
 
 	@Test
-    public void testMultipleNumbers(){
+    public void testMultipleNumbers() {
     	assertEquals(6, Calculator.add("1,2,3"));
     }
 
     @Test
-    public void testNewLine(){
+    public void testNewLine() {
     	assertEquals(6, Calculator.add("1\n2\n3"));
     }
+    @Test
+    public void testNewDelimiter(){
+    	assertEquals(6, Calculator.add("//;\n1;2;3"));
+    }
+
 }
