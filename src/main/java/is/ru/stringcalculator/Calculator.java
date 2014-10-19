@@ -9,7 +9,10 @@ public class Calculator {
 		if (isEmptyString(text)) {
 			return 0;
 		}
-		else if (text.contains(",") || text.contains("\n") || text.contains("//")) {
+		else if (text.contains("-")) {
+			NegativesNotAllowed(text);
+		}
+		else if (contains(text)) {
 			if (text.startsWith("//")) {
 				return sum(newDelimiter(text));
 			}
@@ -17,6 +20,8 @@ public class Calculator {
 		} else {
 			return 1;
 		}
+
+		return toInt(text);
 	}
 
 	private static Boolean isEmptyString(String text) {
@@ -40,12 +45,25 @@ public class Calculator {
     }
 
     private static Boolean contains(String text) {
-		return text.contains(",") || text.contains("\n");
+		return text.contains(",") || text.contains("\n") || text.contains("//") || text.contains("-");
 	}
 
 	private static String[] newDelimiter(String numbers) {	 
 			Character newDelimiter = numbers.charAt(2);
 			numbers = numbers.substring(4);
 			return numbers.split(",|\n|" + newDelimiter);
+	}
+
+	private static void NegativesNotAllowed(String numbers) {	 
+		String text = "Negatives not allowed: ";
+		String[] input = numbers.split("-");
+		
+		for (int i = 1; i < input.length; i++) {
+			text += "-" + input[i].substring(0, 1);
+			if (i < input.length - 1) {
+				text += ",";
+			}
+		}
+		throw new IllegalArgumentException(text);
 	}
 }
