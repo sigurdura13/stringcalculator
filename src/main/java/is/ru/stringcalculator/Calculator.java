@@ -6,7 +6,12 @@ public class Calculator {
 		if (isEmptyString(text)) {
 			return 0;
 		}
-		return 1;
+		else if(text.contains(",")) {
+			String[] numbers = text.split(",");
+			return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+		} else {
+			return 1;
+		}
 	}
 
 	private static Boolean isEmptyString(String text) {
