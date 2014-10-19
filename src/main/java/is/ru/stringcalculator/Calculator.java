@@ -6,7 +6,7 @@ public class Calculator {
 		if(isEmptyString(text)) {
 			return 0;
 		}
-		else if(text.contains(",") || text.contains("\n")) {
+		else if(contains(text)) {
 			return sum(splitNumbers(text));
 		} else {
 			return 1;
@@ -32,4 +32,8 @@ public class Calculator {
 		}
 		return total;
     }
+
+    private static Boolean contains(String text) {
+		return text.contains(",") || text.contains("\n");
+	}
 }
