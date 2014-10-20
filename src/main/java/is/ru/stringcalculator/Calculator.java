@@ -4,7 +4,6 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 
-<<<<<<< HEAD
 	public static int add(String text) {
 
 		if (isEmptyString(text)) {
@@ -69,13 +68,6 @@ public class Calculator {
 			}
 		}
 		throw new IllegalArgumentException(text);
-=======
-	public static int add(String text){
-		if (text.equals("")) {
-			return 0;
-		} else {
-			return 1;
-		}
->>>>>>> FETCH_HEAD
+
 	}
 }

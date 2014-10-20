@@ -19,7 +19,6 @@ public class CalculatorTest {
 	public void testOneNumber() {
 		assertEquals(1, Calculator.add("1"));
 	}
-<<<<<<< HEAD
 
 	@Test
 	public void testTwoNumbers() {
@@ -55,6 +54,4 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("1001,6"));
     }
 
-=======
->>>>>>> FETCH_HEAD
 }
